@@ -1,0 +1,17 @@
+z pohledu uživatele:
+
+program dává uživateli volby: sázet, nechat si vypsat vzhled rulety a její pravidla, ukončit hru
+ohledně sázení nabízí všechny typy ruletových sázek, program nedovolí vsadit tak, jak by 
+nemělo být možné (vypíše příslušnou zprávu) např. nelze vsadit na číslo 55...
+uživatel je průběžně informován o výsledcích svých sázek a dotazován, jestli si přeje zopakovat typ sázení,
+hra končí pokud uživateli dojdou peníze (je informován) nebo pokud si sám zvolí konec
+
+ohledně programu:
+
+ve třídě "Ruleta" je metoda main obsahující cyklus hry a pomocí switche odkazující na ostatní metody,
+po volbě "vsadit" odkazuje do třídy "Sazeni", kde lze najít metody pro volbu a následné
+provedení kterékoliv z nabízených sázek
+
+
+
+program obsahuje zakomentovaný pokus o načítání ze souboru (v metodě main)
