@@ -1,0 +1,44 @@
+Semestrální práce na téma hry SNAKE nabízí hru pro jednoho, dva nebo tøi hráèe.
+Tyto možnosti lze nastavit pomocí vstupních argumentù, kde urèímì také rozmìry
+hrací plochy projektu, tedy ve formì "poèethadù šíøka výška" (poèet hadù 1/2/3,
+rozmìry tak, aby se vešly na monitor libovolné).
+
+Po spuštìní se objeví požadovaný poèet hadù. Hráèi je OVLÁDAJÍ pomocí kláves:
+1) šipky
+2) W A S D
+3) I J K L
+Hra nabízí také rùzná nastavení a možnosti v MENU pro zpestøení/úpravu hry,
+v závorce uvedeny klávesové zkratky pro tyto možnosti
+-možnost nastavit rychlost pohybu hadù
+-nastavit okraje jako zdi
+-možnost restartovat(N)/zapauzovat(P)/odpauzovat(O)/ukonèit hru(ESCAPE)
+
+PRAVIDLA hry:
+Hra bìží tak dlouho dokud žije alespoò jeden had, hráèi se snaží nasbírat co nejvíce
+bodù (každý sbírá svou barvu) a pøitom nenarazit sami do svého hada, nebo do hadù soupeøù
+(pøípadnì do zapnutých zdí). Vždy když nìkterý z hráèù dosáhne poètù bodù dìlitelného 20ti,
+objeví se bonus o hodnotì 5ti bodù dostupný všem hráèùm.
+
+SERVERová hra:
+Pro hru ve DVOU hráèích.
+Pro možnost hraní po síti musí jeden z hráèu zvolit Tvorbu serveru v menu "hra".
+Druhý hráè se následnì pøipojí volbou "pøipojit ke høe" rovnìž v menu "hra".
+Nutno dodržet èíslo portu a adresu serveru - po uspìšném spojení client ovládá
+zeleného hada na obrazovce serveru (posílá mu pøíkazy).
+
+STRUKTURA projektu:
+-poèet tøíd (øádkù v dané tøídì): 10
+-øádky kodu v jednotlivých tøídách : ConnectionAccept(43),GUI(140),MainMain(31),
+     MenuBAR(27),MenuHelp(63),MenuHerniMod(38),MenuHra(102),MenuRychlost(76),SSS(79),Snake(468)
+-celkový poèet øádkù kodu : 1067
+
+FUNKCE jednotlivých TØÍD:
+-MainMain - spouštìcí tøída osbahující metodu main, zde probìhne naètení argumentù
+            (poèet hadù...) a je vytvoøena hra
+-Snake - zde je realizována hra pomocí vlákna provádìjícího požadované operace
+-SSS - objekt predstavujici hada ve hre, metody pro jeho pouziti
+-GUI - grafické rozhraní pro znázornìní hry (frame - panely, ...)
+-Menu - obsahuje konstruktor pro herní menu využité v GUI,skládá se z dílèích menu:
+        MenuHra, MenuRychlost, MenuHerniMod, MenuHelp
+-ConnectionAccept - vlakno obsluhujici pripojeni na server
+-SSS - objekt pøedstavují jednoho hada ve høe, jeho instance se obejvují ve tøídì Snake
